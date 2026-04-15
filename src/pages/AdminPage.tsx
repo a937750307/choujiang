@@ -34,7 +34,7 @@ export default function AdminPage() {
     addParticipant, updateParticipant, removeParticipant
   } = useLotteryStore();
 
-  const [csvText, setCsvText] = useState(`姓名,部门,必中奖项(奖项名称),禁止中奖(是/否),权重(1-10)\n张三,技术部,,否,1\n李四,市场部,一等奖,否,1\n王五,行政部,,是,1\n赵六,销售部,,否,5\n孙七,财务部,,否,1\n\n第一行不要删，第二行开始按该格式填写数据（此行是做说明，请删除）`);
+  const [csvText, setCsvText] = useState(`姓名,部门\n张三,技术部\n李四,市场部\n王五,行政部\n赵六,销售部\n孙七,财务部\n\n第一行不要删，第二行开始按该格式填写数据（此行是做说明，请删除）`);
 
 
   // 受控模式解锁：通过 URL 参数 ?controlled=1 解锁必中/禁中/权重功能
@@ -702,8 +702,8 @@ export default function AdminPage() {
                     <Label>粘贴 CSV 数据</Label>
                     <Textarea
                       placeholder={controlledModeUnlocked
-                        ? `姓名,部门,必中奖项(奖项名称),禁止中奖(是/否),权重(1-10)`
-                        : "姓名,部门,必中奖项(奖项名称),禁止中奖(是/否),权重(1-10)\n张三,技术部,,否,1\n李四,市场部,一等奖,否,1\n王五,行政部,,是,1\n赵六,销售部,,否,5\n孙七,财务部,,否,1\n\n第一行不要删，第二行开始按该格式填写数据（此行是做说明，请删除）"
+                        ? `姓名,部门`
+                        : "姓名,部门\n张三,技术部\n李四,市场部\n王五,行政部\n赵六,销售部\n孙七,财务部\n\n第一行不要删，第二行开始按该格式填写数据（此行是做说明，请删除）"
                       }
                       value={csvText}
                       onChange={e => setCsvText(e.target.value)}
