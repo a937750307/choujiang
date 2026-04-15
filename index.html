@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>抽奖系统</title>
+    <link href="/css2.css" rel="stylesheet">
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    <!-- 备案信息，仅PC端显示 -->
+    <div id="beian-info">
+      <span class="beian-yellow">本站内容仅供学习和交流，非商业用途</span>
+      <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener" class="beian-white beian-link">浙ICP备2025187466号</a>
+      <a href="https://www.beian.gov.cn/portal/registerSystemInfo?recordcode=33030402001483" target="_blank" rel="noopener" class="beian-white beian-link beian-gongan">
+        <span class="gongan-flex">
+          <img src="https://www.937788.xyz/gonganbeian.png" alt="公安备案" />
+          浙公网安备33030402001483号
+        </span>
+      </a>
+    </div>
+    <style>
+      /* 全屏模式下隐藏备案信息 */
+      html:fullscreen #beian-info,
+      body:fullscreen #beian-info,
+      #beian-info:fullscreen {
+        display: none !important;
+      }
+      #beian-info {
+        width: 100vw;
+        box-sizing: border-box;
+        padding: 16px 0 8px 0;
+        text-align: center;
+        font-size: 13px;
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        z-index: 100;
+        background: transparent;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 18px;
+      }
+      .beian-yellow {
+        color: #FFD600;
+        font-weight: bold;
+      }
+      .beian-white {
+        color: #fff;
+        text-decoration: none;
+        margin-left: 0;
+      }
+      .beian-link:hover {
+        text-decoration: underline;
+      }
+      .beian-gongan .gongan-flex {
+        display: inline-flex;
+        align-items: baseline;
+        gap: 2px;
+      }
+      .beian-gongan img {
+        height: 15px;
+        width: 15px;
+        display: inline-block;
+        margin-right: 2px;
+        position: relative;
+        top: 2px;
+      }
+      @media (max-width: 768px) {
+        #beian-info {
+          display: none;
+        }
+      }
+    </style>
+  </body>
+</html>
